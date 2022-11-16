@@ -11,7 +11,7 @@ export class CriarPensamentoComponent implements OnInit {
     id: '',
     conteudo: '',
     autoria: '',
-    modelo: ''
+    modelo: 'modelo1'
   }
   constructor() { }
 
