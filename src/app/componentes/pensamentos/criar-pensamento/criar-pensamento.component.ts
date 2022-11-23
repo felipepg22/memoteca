@@ -21,13 +21,4 @@ export class CriarPensamentoComponent implements OnInit {
   criarPensamento() : void {
     alert("Novo pensamento criado!");
   }
-
-  cancelar() : void {
-    this.pensamento = {
-      id:'',
-      conteudo:'',
-      autoria:'',
-      modelo:''
-    }
-  }
 }
