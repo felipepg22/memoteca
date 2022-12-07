@@ -24,9 +24,13 @@ export class CriarPensamentoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  criarPensamento() : void {
+  criarPensamento(): void {
     this.service.criar(this.pensamento).subscribe(() => {
       this.router.navigate(['/listarPensamentos']);
     });
+  }
+
+  cancelar(): void {
+    this.router.navigate(['/listarPensamentos']);
   }
 }
