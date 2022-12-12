@@ -11,8 +11,6 @@ import { PensamentoService } from './../pensamento.service';
 })
 export class CriarPensamentoComponent implements OnInit {
 
-
-
   formulario!: FormGroup;
 
   constructor(
@@ -22,15 +20,16 @@ export class CriarPensamentoComponent implements OnInit {
       ) { }
 
   ngOnInit(): void {
+    const noWhiteSpaceInBeggining = '^[^\s].+[^\s]$';
     this.formulario = this.formBuilder.group({
       conteudo: ['', Validators.compose([
         Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.-]*$'),
+        Validators.pattern(noWhiteSpaceInBeggining),
         Validators.minLength(5)
       ])],
       autoria: ['', Validators.compose([
         Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.-]*$'),
+        Validators.pattern(noWhiteSpaceInBeggining),
         Validators.minLength(3)
       ])],
       modelo: ['modelo1']
