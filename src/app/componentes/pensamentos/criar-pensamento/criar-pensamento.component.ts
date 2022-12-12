@@ -35,6 +35,7 @@ export class CriarPensamentoComponent implements OnInit {
       ])],
       modelo: ['modelo1']
     })
+
   }
 
   criarPensamento(): void {
@@ -47,5 +48,9 @@ export class CriarPensamentoComponent implements OnInit {
 
   cancelar(): void {
     this.router.navigate(['/listarPensamentos']);
+  }
+
+  habilitarBotao(): string {
+    return this.formulario.valid? 'botao' : 'botao__desabilitado';
   }
 }
