@@ -14,8 +14,8 @@ export class PensamentoComponent implements OnInit {
               id: 0,
               conteudo: 'teste',
               autoria: 'abc bolinhas',
-              modelo: 'modelo3'
-
+              modelo: 'modelo3',
+              favorito: false
             };
 
   constructor() { }
@@ -23,11 +23,13 @@ export class PensamentoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  larguraPensamento() : string
-  {
-    if(this.pensamento.conteudo.length > 256) return 'pensamento-g';
+  larguraPensamento(): string {
 
-    return 'pensamento-p';
+    return this.pensamento.conteudo.length > 256 ? 'pensamento-g' : 'pensamento-p';
   }
 
+  verificaIconeFavorito(): string {
+
+    return this.pensamento.favorito ? 'ativo' : 'inativo';
+  }
 }
