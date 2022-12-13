@@ -34,11 +34,11 @@ export class ListarPensamentoComponent implements OnInit {
 
   buscarPensamentos(): void {
     this.paginaAtual = 1;
-    this.haMaisPensamentos = true;
 
     this.service.listar(this.paginaAtual, this.filtro)
                 .subscribe(listaPensamentos => {
                   this.listaPensamentos = listaPensamentos;
+                  this.haMaisPensamentos = listaPensamentos.length > 6;
                 })
   }
 }
