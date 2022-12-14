@@ -8,18 +8,22 @@ import { Pensamento } from './pensamento';
 export class PensamentoService {
 
   private readonly API = 'http://localhost:3000/pensamentos';
+  private readonly itensPorPagina = 6;
 
   constructor(private http: HttpClient) { }
 
-  listar(pagina: number, filtro: string = ''): Observable<Pensamento[]> {
-    const itensPorPagina: number = 6;
+  listar(pagina: number, filtro: string = '', favoritos: boolean = false): Observable<Pensamento[]> {
 
-    let params: HttpParams = new HttpParams().set('_page', pagina)
-                                             .set('_limit', itensPorPagina);
+    let params: HttpParams = new HttpParams()
+    .set('_page', pagina)
+    .set('_limit', this.itensPorPagina);
 
 
-    if(filtro.trim().length > 2)
+    if (filtro.trim().length > 2)
       params = params.set('q', filtro);
+
+    if(favoritos)
+      params = params.set('favorito', true);
 
     return this.http.get<Pensamento[]>(this.API, { params });
   }

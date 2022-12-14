@@ -10,8 +10,12 @@
       >
       <img src="assets/imagens/lupa.png" width="20px" alt="Lupa azul">
     </div>
+    <div class="botoes">
+      <button class="botao" (click)="buscarTodosPensamentos()">Meu Mural</button>
+      <button class="botao" (click)="buscarFavoritos()">Meus Favoritos</button>
+      <button routerLink="/criarPensamento" class="botao">Novo pensamento</button>
+    </div>
       <h2 class="ff-inter">Meu Mural</h2>
-      <button routerLink="/criarPensamento" class="botao">Adicionar pensamento</button>
   </header>
 
   <div class="mural" *ngIf="listaPensamentos.length > 0, else semPensamentosCadastrados">
