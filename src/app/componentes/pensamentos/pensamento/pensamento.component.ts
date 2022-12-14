@@ -11,7 +11,7 @@ import { PensamentoService } from './../pensamento.service';
 export class PensamentoComponent implements OnInit {
 
 
-  @Input() pensamento : Pensamento = {
+  @Input() pensamento: Pensamento = {
 
               id: 0,
               conteudo: 'teste',
@@ -19,6 +19,8 @@ export class PensamentoComponent implements OnInit {
               modelo: 'modelo3',
               favorito: false
             };
+
+  @Input() listaFavoritos: Pensamento[] = [];
 
   constructor( private readonly service: PensamentoService) { }
 
@@ -36,6 +38,8 @@ export class PensamentoComponent implements OnInit {
   }
 
   atualizaFavoritos(): void {
-    this.service.mudarFavorito(this.pensamento).subscribe();
+    this.service.mudarFavorito(this.pensamento).subscribe( () => {
+      this.listaFavoritos.splice(this.listaFavoritos.indexOf(this.pensamento), 1);
+    });
   }
 }

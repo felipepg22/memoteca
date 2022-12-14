@@ -5,14 +5,14 @@
       "conteudo": "Que bom que vc veio",
       "autoria": "abc",
       "modelo": "modelo1",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 2,
       "conteudo": "Estudando Angularabc",
       "autoria": "Dev Alura aefeaf aefeaf",
       "modelo": "modelo2",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 3,
@@ -32,14 +32,14 @@
       "conteudo": "teste",
       "autoria": "abeafe",
       "modelo": "modelo1",
-      "favorito": false,
+      "favorito": true,
       "id": 5
     },
     {
       "conteudo": "abcde",
       "autoria": "abc",
       "modelo": "modelo1",
-      "favorito": false,
+      "favorito": true,
       "id": 6
     },
     {

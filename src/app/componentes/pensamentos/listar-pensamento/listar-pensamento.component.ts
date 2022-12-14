@@ -15,6 +15,7 @@ export class ListarPensamentoComponent implements OnInit {
   paginaAtual: number = 1;
   filtro: string = '';
   favoritos: boolean = false;
+  listaFavoritos: Pensamento[] = [];
 
   constructor(private service: PensamentoService) { }
 
@@ -49,6 +50,7 @@ export class ListarPensamentoComponent implements OnInit {
                 .subscribe(listaPensamentosFavoritos => {
                   this.listaPensamentos = listaPensamentosFavoritos;
                   this.haMaisPensamentos = listaPensamentosFavoritos.length > 6;
+                  this.listaFavoritos = listaPensamentosFavoritos;
                 })
   }
 
